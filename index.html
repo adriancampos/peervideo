@@ -325,7 +325,7 @@
 
         var msg =  window.location.href.split('?')[0] + "?" 
           + "peer=" + peer.id 
-          + ($('#shareconfig_includesrc')[0].checked ? "&src=" + vid.src : "")        
+          + ($('#shareconfig_includesrc')[0].checked ? "&src=" + encodeURIComponent(vid.src) : "")        
 
         $('#shareurl').text(
          msg
