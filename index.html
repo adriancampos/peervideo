@@ -316,6 +316,10 @@
         vid.src = $('#videosrc').val()
       });
 
+       // Prepare video srouce drop box.
+      $('#srcbox')[0].addEventListener('change', function (e) {
+        vid.src = URL.createObjectURL(e.target.files[0]);
+      });
 
       $('#generate_shareurl').click(function () {
 
@@ -392,6 +396,7 @@
 
   <input type="text" id="videosrc" placeholder="video source">
   <input class="button" type="button" value="Set video source" id="setvideosrc">
+  <input id="srcbox" type="file" />
   <br>
   <button id="syncplayback">Sync</button>
   <div class="videocontainer">
